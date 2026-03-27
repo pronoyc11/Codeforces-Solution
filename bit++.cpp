@@ -5,22 +5,15 @@ using namespace std;
 
 int main(){
 
-int n,valueX=0;
+int k,n,w;
 
-cin>>n;
-
-for(int i=0;i<n;i++){
-    string statement;
-    cin>>statement;
-    if(statement == "X++" || statement == "++X"){
-        valueX++;
-    }else{
-        valueX--;
-    }
-}
+cin>> k>>n>>w;
 
 
-cout<<valueX<<endl;
+int price = k*(w*(w+1)/2);
+
+if(n >= price) cout<< 0 <<endl;
+else cout<<(price - n)<<endl;
 
 return 0;
 }
