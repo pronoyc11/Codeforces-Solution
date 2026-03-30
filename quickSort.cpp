@@ -17,12 +17,12 @@ int i = low - 1;///ensuring the position of the smallest value
 for(int j=low;j<high;j++){
     if(arr[j]<= pivot){
 
-        i++;
+        i++;///Only gathering the left elements at first.
         swap(arr[i],arr[j]);
     }
 }
 
-swap(arr[i+1],arr[high]);
+swap(arr[i+1],arr[high]); ///Bringing the pivot to the middle
 return i+1;
 }
 
@@ -30,7 +30,7 @@ return i+1;
 void quickSort(int arr[],int low,int high){
 if(low<high){
     int q = partition(arr,low,high);
-    quickSort(arr,low,q-1);
+    quickSort(arr,low,q-1); ///q is altered to avoid overwriting pivot.
     quickSort(arr,q+1,high);
 }
 }
